@@ -30,11 +30,11 @@ Please note - running the complete script will take a considerable length of tim
 ```sql
 SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
                 SELECT gid AS id,
-                         source::integer,
-                         target::integer,
-			cost_time::double precision AS cost
-                        FROM openroads.roadlink',
-                5417727, 5417722, false, false);
+                   source::integer,
+                   target::integer,
+				   cost_time::double precision AS cost
+                   FROM openroads.roadlink',
+                   5417727, 5417722, false, false);
 ```
 
 

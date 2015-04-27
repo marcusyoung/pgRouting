@@ -38,4 +38,4 @@ SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
 ```
 
 
-Thanks to [mixedbredie](https://github.com/mixedbredie}) for prior work on using pgRouting with Strategi and Meridian2 datasets.
+Thanks to [mixedbredie](https://github.com/mixedbredie) for prior work on using pgRouting with Strategi and Meridian2 datasets.

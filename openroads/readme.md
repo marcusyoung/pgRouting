@@ -7,9 +7,7 @@ There is greater detail in urban areas with more streets represented. This may b
 
 ## Disadvantages over Meridian2 and Strategi
 - It is a very large dataset, with some 3.2 million records, and therefore more difficult to work with - the main problems being query speed. It is possible to download smaller portions of the dataset (25km<sup>2</sup> areas), but only in GML format.
-- It has a basic road classification scheme: Motorways, A-roads, B-roads, Unclassified and Not Classified. The final version will include Classified Unnumbered roads which are known unofficially as C-roads. There is a 'formofway' column which identifies the physical form of the road: single carriageway, dual carriageway, roundabout and slip road. The lack of distinction between different types of unclassified road makes the dataset less than ideal for drive time analysis, despite OS stating that it is suitable for "simple drive time analysis". More details are available in the OS guide to the dataset:
-
-https://www.ordnancesurvey.co.uk/docs/user-guides/os-open-roads-user-guide.pdf
+- It has a basic road classification scheme: Motorways, A-roads, B-roads, Unclassified and Not Classified. The final version will include Classified Unnumbered roads which are known unofficially as C-roads. There is a 'formofway' column which identifies the physical form of the road: single carriageway, dual carriageway, roundabout and slip road. The lack of distinction between different types of unclassified road makes the dataset less than ideal for drive time analysis, despite OS stating that it is suitable for "simple drive time analysis". More details are available in the OS guide to the dataset: https://www.ordnancesurvey.co.uk/docs/user-guides/os-open-roads-user-guide.pdf
 
 ## Preparing the database for pgRouting
 The Open Maps dataset can be downloaded from:
@@ -27,7 +25,7 @@ The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob
 
 Note that running the complete script will take a considerable length of time, maybe one or two hours.
 
-## Run a query - here is an example
+## Run a query - here's an example
 
 ```sql
 SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('

@@ -21,7 +21,7 @@ I imported the shapefile into a new PostgreSQL schema (called openroads) using t
 - set to generate simple geometries
 - SRID set to 27700
 
-The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob/master/pgrouting-openroads.sql) contains all the queries needed to prepare the database for using with pgRouting. The included comments should be self explanatory. Note that the data provided by OS already contains the start and end nodes of each road link, and there is no need to generate the topology using pgRouting. However, it is necessary to convert these columns from varchar to integer. 
+The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob/master/openroads/pgrouting-openroads.sql) contains all the queries needed to prepare the database for using with pgRouting. The included comments should be self explanatory. Note that the data provided by OS already contains the start and end nodes of each road link, and there is no need to generate the topology using pgRouting. However, it is necessary to convert these columns from varchar to integer. 
 
 Note that running the complete script will take a considerable length of time, maybe one or two hours.
 

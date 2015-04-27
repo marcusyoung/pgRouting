@@ -14,7 +14,7 @@ ALTER TABLE openroads.roadlink
 
 
 -- We need to convert the startnode and endnode columns from varchar to integer as required by pgRouting.
--- First we remove the leading 'L' from the startnode and endnode columns
+-- First we remove the leading 'L' from the startnode and endnode values.
 UPDATE openroads.roadlink set startnode = replace(startnode, 'L', '');
 UPDATE openroads.roadlink set endnode = replace(startnode, 'L', '');
 -- Second we convert the startnode and endnode columns to integer

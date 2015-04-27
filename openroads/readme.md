@@ -25,7 +25,7 @@ The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob
 
 Note that running the complete script will take a considerable length of time, maybe one or two hours.
 
-## Run a query - here's an example
+## Run a query to test it - here's an example
 
 ```sql
 SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
@@ -38,3 +38,4 @@ SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
 ```
 
 
+Thanks to [mixedbredie](https://github.com/mixedbredie}) for prior work on using pgRouting with Strategi and Meridian2 datasets.

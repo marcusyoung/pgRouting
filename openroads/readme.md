@@ -25,7 +25,7 @@ The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob
 
 Note that running the complete script will take a considerable length of time, maybe one or two hours.
 
-## Run a query to test it - here's an example
+## Run a query to test it - here's an example (a trip across the Highlands)
 
 ```sql
 SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('

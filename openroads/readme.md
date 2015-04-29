@@ -21,11 +21,11 @@ I imported the shapefile into a new PostgreSQL schema (called openroads) using t
 - set to generate simple geometries
 - SRID set to 27700
 
-The file [pgrouting-openroads.sql](https://github.com/marcusyoung/pgRouting/blob/master/openroads/pgrouting-openroads.sql) contains all the queries needed to prepare the database for using with pgRouting. The included comments should be self explanatory. Note that the data provided by OS already contains the start and end nodes of each road link, and there is no need to generate the topology using pgRouting. However, it is necessary to convert these columns from varchar to integer. 
+The file [pgrouting-openroads.sql](pgrouting-openroads.sql) contains all the queries needed to prepare the database for using with pgRouting. The included comments should be self explanatory. Note that the data provided by OS already contains the start and end nodes of each road link, and there is no need to generate the topology using pgRouting. However, it is necessary to convert these columns from varchar to integer. 
 
 Note that running the complete script will take a considerable length of time, maybe one or two hours.
 
-## Run a query to test it - here's an example (a trip across the Highlands)
+## Run a query to test it - here's an example (a trip in Southampton)
 
 ```sql
 SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
@@ -34,8 +34,9 @@ SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
                    target::integer,
 				   cost_time::double precision AS cost
                    FROM openroads.roadlink',
-                   5417727, 5417722, false, false);
+                   5786852, 6815911, false, false);
 ```
 
+![Southampton example route](openroadsrouting.png)
 
 Thanks to [mixedbredie](https://github.com/mixedbredie) for prior work on using pgRouting with Strategi and Meridian2 datasets.

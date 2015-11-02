@@ -1,6 +1,6 @@
 # This R script can be used in conjunction with a PostgreSQL spatially-enabled databased to create a
 # polygon around a given set of points using the pgRouting pgr_pointsAsPolygon function.
-# This is useful for visualising the catchment area around some site or facility.
+# This is useful for visualising the catchment area around sites or facilities.
 
 # Load required libraries
 library(RPostgreSQL)

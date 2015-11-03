@@ -16,23 +16,21 @@ con <-
 # create a table called catchment_polygons which will store the site catchment polygons
 query <-
   paste(
-    "CREATE TABLE public.catchment_polygons(gid serial NOT NULL PRIMARY KEY, name text)", sep =
-      ""
+    "CREATE TABLE public.catchment_polygons(gid serial NOT NULL PRIMARY KEY, name text)"
   )
 dbGetQuery(con, query)
 
 # add geometry column with CRS 27700 - amend CRS as required
 query <-
   paste(
-    "SELECT AddGeometryColumn('public','catchment_polygons','geom', 27700, 'polygon', 2)", sep =
-      ""
+    "SELECT AddGeometryColumn('public','catchment_polygons','geom', 27700, 'polygon', 2)"
   )
 dbGetQuery(con, query)
 
 
 # get list of distinct sites from the survey table
 query1 <-
-  paste("SELECT DISTINCT site FROM public.survey", sep = "")
+  paste("SELECT DISTINCT site FROM public.survey")
 sites <- dbGetQuery(con, query1)
 
 # loop through the sites dataframe and for each site create a temporary table holding observations relating to that site

@@ -9,3 +9,7 @@ This repository contains stuff related to the pgRouting extension for PostGIS, s
 ### Using R, PostgreSQL and pgRouting to automatically generate multiple site or facility catchment area polygons
 
 [An R script to generate multiple catchment area polygons](catchment_polygons/).
+
+### Using R, PostgreSQL and pgRouting to automatically generate drive time or drive distance based network buffers
+
+[An R script to generate drive time or drive distance network buffers / polygons](drive_time_polygons/).

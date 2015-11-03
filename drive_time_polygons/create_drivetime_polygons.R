@@ -53,8 +53,8 @@ for (i in 1:length(startnodes)) {
   query2 <-
     paste(
       "CREATE TEMP TABLE nodes AS
-    SELECT a.seq, a.id1, a.cost, b.geom from pgr_drivingDistance('SELECT 
-      gid AS id,    
+      SELECT a.seq, a.id1, a.cost, b.geom from pgr_drivingDistance('SELECT
+      gid AS id,
       source::integer,
       target::integer,",
       costField,
@@ -65,7 +65,7 @@ for (i in 1:length(startnodes)) {
       costValue,
       ", false, false) AS a
       INNER JOIN openroads.roadnode as b ON b.identifier = a.id1;", sep = ""
-    )
+      )
   # this next line just removes line breaks from the query - allows the query to be written over mutiple lines as above
   query2 <- gsub(pattern = '\\s', replacement = " ", x = query2)
   dbGetQuery(con, query2)

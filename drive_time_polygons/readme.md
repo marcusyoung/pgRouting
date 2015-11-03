@@ -42,7 +42,7 @@ The file [create_drivetime_polygons.R](create_drivetime_polygons.R) contains all
 
 The buffer polygons can be displayed in QGIS direct from PostgreSQL. Set a filter to show only certain polygons.
 
-These are 10km network buffers for Axminster, Honiton, Feniton and Whimple railway stations.
+These are 10km drive distance network buffers for Axminster, Honiton, Feniton and Whimple railway stations.
 
 ![Example network distance buffers](drive_distance.png)
 

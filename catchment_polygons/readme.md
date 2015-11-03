@@ -1,4 +1,4 @@
-# Using R, PostgreSQL and pgRouting to automatically generate multiple site or facility catchment area polygons  
+# Using R, PostgreSQL, PostGIS and pgRouting to automatically generate multiple site or facility catchment area polygons  
 
 This R script can be used in conjunction with a PostgreSQL spatially-enabled database to generate multiple catchment area polygons. It uses the pgRouting pgr_pointsAsPolygon function, which draws an alpha shape around a given set of points. This is useful for visualising the catchment areas around multiple sites or facilities. This script is a simplified version of one that I used to visualise railway station catchments. I had results from a passenger survey, and for each passenger I knew their origin postcode and the railway station that they chose to depart from. I therefore wanted to visualise the observed station catchments as revealed by the survey, and due to the dataset size needed this to be an automated process.
 

@@ -1,4 +1,4 @@
-# Using R, PostgreSQL and pgRouting to automatically generate drive time or drive distance based network buffers
+# Using R, PostgreSQL, PostGIS and pgRouting to automatically generate drive time or drive distance based network buffers
 This R Script will automatically generate drive distance or drive time based buffers for a given set of starting nodes, using the pgRouting functions: pgr_drivingDistance and pgr_pointsAsPolygon. The polygons are written to a PostgreSQL table. It requires suitably prepared database tables derived from the Ordnance Survey Open Roads dataset, but could be modified to use any other suitably prepared routable network.
 
 ## Assumptions

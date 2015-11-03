@@ -46,7 +46,7 @@ These are 10km drive distance network buffers for Axminster, Honiton, Feniton an
 
 ![Example network distance buffers](drive_distance.png)
 
-## Example of drive distance buffer
+## Example of drive time buffer
 
 This is a 25 minutes drive time buffer for Honiton railway station. Based on this, the average speeds used when preparing the roadlinks table need some tweaking!
 

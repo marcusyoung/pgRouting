@@ -46,7 +46,7 @@ costField <- 'cost_len'
 # cost value in units of the cost column - meters for cost_len or minutes for cost_time
 costValue <- 10000
 
-# loop through the startnodes and create temporary table to hold the nodes within road network distance
+# loop through the startnodes and create temporary table to hold the nodes
 
 for (i in 1:length(startnodes)) {
   # create the temp table

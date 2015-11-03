@@ -33,31 +33,31 @@ ALTER TABLE openroads.roadlink
 -- you can set these to whatever you like
 UPDATE openroads.roadlink SET speed_mph =
     CASE
-	WHEN class = 'A Road' AND formofway = 'Single Carriageway' THEN 55
-	WHEN class = 'A Road' AND formofway = 'Dual Carriageway' THEN 60
-	WHEN class = 'A Road' AND formofway = 'Collapsed Dual Carriageway' THEN 60
+	WHEN class = 'A Road' AND formofway = 'Single Carriageway' THEN 47
+	WHEN class = 'A Road' AND formofway = 'Dual Carriageway' THEN 55
+	WHEN class = 'A Road' AND formofway = 'Collapsed Dual Carriageway' THEN 55
 	WHEN class = 'A Road' AND formofway = 'Roundabout' THEN 25
-	WHEN class = 'A Road' AND formofway = 'Slip Road' THEN 50
-	WHEN class = 'B Road' AND formofway = 'Single Carriageway' THEN 50
-	WHEN class = 'B Road' AND formofway = 'Dual Carriageway' THEN 60
-	WHEN class = 'B Road' AND formofway = 'Collapsed Dual Carriageway' THEN 60
+	WHEN class = 'A Road' AND formofway = 'Slip Road' THEN 40
+	WHEN class = 'B Road' AND formofway = 'Single Carriageway' THEN 40
+	WHEN class = 'B Road' AND formofway = 'Dual Carriageway' THEN 50
+	WHEN class = 'B Road' AND formofway = 'Collapsed Dual Carriageway' THEN 50
 	WHEN class = 'B Road' AND formofway = 'Roundabout' THEN 25
-	WHEN class = 'B Road' AND formofway = 'Slip Road' THEN 50
-	WHEN class = 'Motorway' AND formofway = 'Single Carriageway' THEN 70
-	WHEN class = 'Motorway' AND formofway = 'Dual Carriageway' THEN 70
-	WHEN class = 'Motorway' AND formofway = 'Collapsed Dual Carriageway' THEN 70
+	WHEN class = 'B Road' AND formofway = 'Slip Road' THEN 30
+	WHEN class = 'Motorway' AND formofway = 'Single Carriageway' THEN 67
+	WHEN class = 'Motorway' AND formofway = 'Dual Carriageway' THEN 67
+	WHEN class = 'Motorway' AND formofway = 'Collapsed Dual Carriageway' THEN 67
 	WHEN class = 'Motorway' AND formofway = 'Roundabout' THEN 30
-	WHEN class = 'Motorway' AND formofway = 'Slip Road' THEN 60
-	WHEN class = 'Not Classified' AND formofway = 'Single Carriageway' THEN 45
-	WHEN class = 'Not Classified' AND formofway = 'Dual Carriageway' THEN 55
-	WHEN class = 'Not Classified' AND formofway = 'Collapsed Dual Carriageway' THEN 55
+	WHEN class = 'Motorway' AND formofway = 'Slip Road' THEN 50
+	WHEN class = 'Not Classified' AND formofway = 'Single Carriageway' THEN 35
+	WHEN class = 'Not Classified' AND formofway = 'Dual Carriageway' THEN 45
+	WHEN class = 'Not Classified' AND formofway = 'Collapsed Dual Carriageway' THEN 45
 	WHEN class = 'Not Classified' AND formofway = 'Roundabout' THEN 25
-	WHEN class = 'Not Classified' AND formofway = 'Slip Road' THEN 45
-	WHEN class = 'Unclassified' AND formofway = 'Single Carriageway' THEN 45
-	WHEN class = 'Unclassified' AND formofway = 'Dual Carriageway' THEN 55
-	WHEN class = 'Unclassified' AND formofway = 'Collapsed Dual Carriageway' THEN 55
+	WHEN class = 'Not Classified' AND formofway = 'Slip Road' THEN 25
+	WHEN class = 'Unclassified' AND formofway = 'Single Carriageway' THEN 35
+	WHEN class = 'Unclassified' AND formofway = 'Dual Carriageway' THEN 45
+	WHEN class = 'Unclassified' AND formofway = 'Collapsed Dual Carriageway' THEN 45
 	WHEN class = 'Unclassified' AND formofway = 'Roundabout' THEN 25
-	WHEN class = 'Unclassified' AND formofway = 'Slip Road' THEN 45
+	WHEN class = 'Unclassified' AND formofway = 'Slip Road' THEN 25
 	ELSE 1
 	END;
 

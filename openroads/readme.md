@@ -33,7 +33,7 @@ SELECT seq, id1 AS node, id2 AS edge, cost FROM pgr_dijkstra('
                 SELECT id AS id,
                    source::integer,
                    target::integer,
-				   cost_time::double precision AS cost
+                   cost_time::double precision AS cost
                    FROM openroads.roadlinks',
                    1163580, 743292, false, false)
 ```

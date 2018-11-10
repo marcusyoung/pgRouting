@@ -19,7 +19,7 @@ CREATE INDEX roadlinks_id_idx ON openroads.roadlinks USING btree (id);
 CREATE INDEX roadlinks_identifier_idx ON openroads.roadlinks USING btree (identifier); 
 
 -- Open Roads is now provided with separate shapefiles, each covering 100 x 100 km, and 
--- these need to be merged into a dingle shapefile prior to import into PostgreSQL.
+-- these need to be merged into a single shapefile prior to import into PostgreSQL.
 -- There is overlap between these shapefiles so we now need to find and remove duplicate nodes and links.
 -- This can be done using the 'identifier' field.
 

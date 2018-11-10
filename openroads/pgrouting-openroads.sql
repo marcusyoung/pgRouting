@@ -131,7 +131,7 @@ select count (*) from roadlinks where speed_mph is null;
 -- calculate the cost_time field - here I have calculated estimated journey time in minutes for each link
 UPDATE openroads.roadlinks SET
 	cost_time = (cost_len/1000.0/(speed_mph*1.609344))*60::numeric;
-
+	
 -- Populate coordinates of the start and end points of the links (required by the ASTAR function).
 
 ALTER TABLE openroads.roadlinks

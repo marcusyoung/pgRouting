@@ -29,8 +29,8 @@ Note that running the complete script may take some time (30 minutes on my works
 ### Run a query to test it - here's an example (a trip in Devon from Honiton to Lyme Regis)
 
 ```sql
-SELECT X.* FROM pgr_dijkstra('
-                SELECT id, source, target, cost_time AS cost FROM openroads.roadlinks',
+SELECT X.* FROM pgr_dijkstra(
+                'SELECT id, source, target, cost_time AS cost FROM openroads.roadlinks',
                 1163580,
 		743292,
 		false

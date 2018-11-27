@@ -66,8 +66,8 @@ WHERE id IN (SELECT id
 
 -- drop roadlinks indexes before updating table for performance reasons
 
-DROP INDEX roadlinks_id_idx; 
-DROP INDEX roadlinks_identifier_idx; 
+DROP INDEX openroads.roadlinks_id_idx; 
+DROP INDEX openroads.roadlinks_identifier_idx; 
 
 
 -- add souce and target columns

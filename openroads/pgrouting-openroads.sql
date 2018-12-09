@@ -160,5 +160,9 @@ CREATE INDEX roadlinks_id_idx ON openroads.roadlinks USING btree (id);
 -- spatial index
 CREATE INDEX roadlinks_geom_idx ON openroads.roadlinks USING gist (geom);
 
+-- cluster based on roadlinks_the_geom_idx to improve routing performance
+-- see http://revenant.ca/www/postgis/workshop/indexing.html
+CLUSTER openroads.roadlinks using roadlinks_geom_idx;
+
 -- clean-up the table
 VACUUM (ANALYZE, VERBOSE) openroads.roadlinks;

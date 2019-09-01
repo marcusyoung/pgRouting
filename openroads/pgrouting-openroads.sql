@@ -126,7 +126,7 @@ UPDATE openroads.roadlinks SET speed_mph =
 	
 -- check every link has a speed assigned
 
-select count (*) from roadlinks where speed_mph is null;
+select count (*) from openroads.roadlinks where speed_mph is null;
 
 -- calculate the cost_time field - here I have calculated estimated journey time in minutes for each link
 UPDATE openroads.roadlinks SET

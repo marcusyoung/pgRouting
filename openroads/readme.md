@@ -1,5 +1,7 @@
 *Now updated to work with latest version of Open Roads.*
 
+*Most recent test from raw data was successfully completed: 2 September 2019.*
+
 ## A script to prepare the OS Open Roads dataset for use with pgRouting
 
 The Ordnance Survey provides an open data roads layer for GB, called "Open Roads". It is higher resolution than the old Meridian2 product (now withdrawn) and has an approximate  scale of 1:25,000. Unlike Meridian2 (and Strategi) it has a network topology that is pretty much routable "out of the box". **There is no need to use the `pgr_createTopology()` function with this dataset.**
@@ -16,9 +18,9 @@ The Open Roads dataset can be downloaded from:
 
 http://www.ordnancesurvey.co.uk/opendatadownload/products.html
 
-The download contains multiple shapefiles for each of the 100 by 100 km squares, with separate shapefiles for roadnodes, motorway junctions (a point feature of the generalised location of the junctions and not needed for pgRouting) , and roadlinks. Only the roadlinks are strictly necessary to use open roads with pgRouting, but in the SQL script roadnodes is also used to generate new ids for the start and end nodes (as pgrouting requires these to be integers).
+The shapefile download contains multiple shapefiles for each of the 100 by 100 km squares, with separate shapefiles for roadnodes, motorway junctions (a point feature of the generalised location of the junctions and not needed for pgRouting) , and roadlinks. Only the roadlinks are strictly necessary to use open roads with pgRouting, but in the SQL script roadnodes is also used to generate new ids for the start and end nodes (as pgrouting requires these to be integers).
 
-I merged the separate shapefiles for roadnodes and roadlinks using QGIS v3.4.1 and used the DB Manager to import these into new PostgreSQL tables, using the following settings:
+I merged the separate shapefiles for roadnodes and roadlinks using QGIS v3.8.1 (via Data management tools, merge vector layers) and used the DB Manager to import these into new PostgreSQL tables, using the following settings:
 - set to generate single-part geometries
 - SRID set to 27700
 
@@ -31,8 +33,8 @@ Note that running the complete script may take some time (30 minutes on my works
 ```sql
 SELECT X.* FROM pgr_dijkstra(
                 'SELECT id, source, target, cost_time AS cost FROM openroads.roadlinks',
-                1163580,
-		743292,
+                743073,
+		745673,
 		false
 		) AS X
 		ORDER BY seq;

@@ -4,7 +4,7 @@
 
 ## A script to prepare the OS Open Roads dataset for use with pgRouting
 
-The Ordnance Survey provides an open data roads layer for GB, called "Open Roads". It is higher resolution than the old Meridian2 product (now withdrawn) and has an approximate  scale of 1:25,000. Unlike Meridian2 (and Strategi) it has a network topology that is pretty much routable "out of the box". **There is no need to use the `pgr_createTopology()` function with this dataset - in fact this will introduce inaccuracies in the data by creating nodes (none existant junctions) where one road crosses above or below another road.**
+The Ordnance Survey provides an open data roads layer for GB, called "Open Roads". It is higher resolution than the old Meridian2 product (now withdrawn) and has an approximate  scale of 1:25,000. Unlike Meridian2 (and Strategi) it has a network topology that is pretty much routable "out of the box". **There is no need to use the `pgr_createTopology()` function with this dataset - in fact this will introduce inaccuracies in the data by creating nodes (none existent junctions) where one road crosses above or below another road.**
 
 ### Advantages over Meridian2 and Strategi
 There is greater detail in urban areas with more streets represented. This may be useful for urban accessibility studies, giving more accurate road distance or time measures. 

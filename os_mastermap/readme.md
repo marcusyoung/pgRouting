@@ -27,11 +27,11 @@ I am assuming that you already have PostgreSQL, PostGIS and pgRouting installed 
    - Input: the location of the folder containing the roads data that you extracted from the zip file in Step 1.
    - Fields: leave with all selected which is the default
 
-   ![image-20220819131336931](images\image-20220819131336931.png)
+   ![image-20220819131336931](images/image-20220819131336931.png)
 
 4. Now click on OK and wait for the import of the Roads data to complete. How long this takes will depend on the specification of your computer (with 8 processor cores it took 434 seconds on my computer).
 
-   ![image-20220819140859139](images\image-20220819140859139.png)
+   ![image-20220819140859139](images/image-20220819140859139.png)
 
 ## Step 3 - generate pgRouting compatible source and target fields
 
@@ -55,7 +55,7 @@ When there is grade separation at a node in the roadnode table, the field `formo
 
 The principle is illustrated in the diagrams below, where the road comprising of links A and B crosses above the road comprising of links D and E. In the top diagram, representing the native roadlink data structure, pgRouting would consider there to be a road junction at node 4000000004435260. However, we know from the grade separation information that this would be incorrect. In the bottom diagram this has been corrected by altering the target node UID of Link A and the source node UID of Link B to 7000000004435260. There is now no valid route between the upper and lower road. 
 
-![](images\grade_separation.drawio.png)
+![](images/grade_separation.drawio.png)
 
 The SQL code to implement this change is shown below.
 
@@ -129,11 +129,11 @@ ORDER BY
 
 The returned route from A to B is shown in the table and map below. 
 
-![image-20220819174036288](images\image-20220819174036288.png)
+![image-20220819174036288](images/image-20220819174036288.png)
 
 The most direct route using the unprocessed MM roadlinks table is shown in orange. This would involve joining the motorway at a pseudo node with grade separation and travelling the wrong way down the west carriageway. The suggested route using the amended MM roadlinks table is shown in purple (with the route down to the next motorway junction clipped out for clarity). The grade separation and one-way roads are now fully respected. 
 
-![image-20220819173134763](images\image-20220819173134763.png)
+![image-20220819173134763](images/image-20220819173134763.png)
 
 <small>Base map &copy; OpenStreetMap contributors</small>
 

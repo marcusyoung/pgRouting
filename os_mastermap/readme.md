@@ -16,7 +16,7 @@ I am assuming that you already have PostgreSQL, PostGIS and pgRouting installed 
 
 1. Install the OS Translator II QGIS plugin from Lutra Consulting (https://www.lutraconsulting.co.uk/projects/ostranslator-ii/)
 
-2. In your spatial database create two schemas: `os_mm_roads` and `os_mm_paths`
+2. In your spatial database create a schema: `os_mm_roads` 
 
 3. Launch the OS Translator II plugin and set the following:
 

@@ -5,6 +5,7 @@ alter table os_mm_roads.roadlink
 add column source int8,
 add column target int8; 
 
+-- trim off leading characters of node references and populate new columns
 update os_mm_roads.roadlink
 set source = ltrim(startnodehref, '#osgb')::int8,
 target = ltrim(endnodehref, '#osgb')::int8;
@@ -31,7 +32,7 @@ from os_mm_roads.pseudo_nodes_gs b
 where a.endgradeseparation = 1 and a.target = b.localid;
 
 -- prepare for directed
--- based on directionalitytitle:
+-- based on field directionalitytitle with the possible values:
 -- 'both directions'
 -- 'in direction'
 -- 'in opposite direction'
@@ -62,10 +63,11 @@ SELECT
 	A.formofway,
 	A.name 
 FROM
-	pgr_dijkstra('SELECT ogc_fid as id, source, target, cost, reverse_cost FROM os_mm_roads.roadlink', 4000000023134762, 4000000023104587, true) as X
+	pgr_dijkstra('SELECT ogc_fid as id, source, target, cost, reverse_cost FROM os_mm_roads.roadlink', 4000000023134762, 4000000023104587, directed => true) as X
 	LEFT JOIN (select ogc_fid, formofway, roadname as name from os_mm_roads.roadlink) AS A ON A.ogc_fid = X.edge 
 ORDER BY
 	seq;
+	
 	
 
 
